@@ -19,10 +19,10 @@ test$activity <- y_test$V1
 subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 test$subject <- factor(subject_test$V1)
 
-#merge train and test sets (STEP 1)
+#merge train and test sets (STEP1)
 dataset <- rbind(test, train) 
 
-#filter column names (STEP 2)
+#filter column names (STEP2)
 column.names <- colnames(dataset)
 #get only columns for standard deviation and mean values, also saves activity and subject values 
 column.names.filtered <- grep("std\\(\\)|mean\\(\\)|activity|subject", column.names, value=TRUE)
